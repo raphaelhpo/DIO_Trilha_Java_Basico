@@ -1,3 +1,4 @@
+package Aulas;
 public class Tipos_variaveis {
     public static void main(String[] args) throws Exception {
         byte idade = 123;

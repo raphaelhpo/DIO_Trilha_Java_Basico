@@ -1,3 +1,4 @@
+package Aulas;
 import javax.swing.JOptionPane;
 
 public class Operadores {
