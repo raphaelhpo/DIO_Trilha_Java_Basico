@@ -1,13 +1,4 @@
 package Aulas;
-
-/*public class SmartTV{
-
-    public void ligar(){
-    }
-    public void canal(){
-    }
-    public void volume()
-}*/
 public class Metodos {
     public static void main(String[] args) {
         /*
