@@ -34,7 +34,7 @@ public class SmartTV {
             canal = novoCanal;
             System.out.println("Canal "+novoCanal+" selecionado");
         }
-    }
+    } 
 
     public static void main(String[] args) {
         
