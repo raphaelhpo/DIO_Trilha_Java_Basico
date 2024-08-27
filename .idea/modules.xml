@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ContaBanco/ContaBanco.iml" filepath="$PROJECT_DIR$/ContaBanco/ContaBanco.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/DIO_Trilha_Java_Basico.iml" filepath="$PROJECT_DIR$/.idea/DIO_Trilha_Java_Basico.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DebbugingJava/DebbugingJava.iml" filepath="$PROJECT_DIR$/DebbugingJava/DebbugingJava.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Estruturas Condicionais/Estruturas Condicionais.iml" filepath="$PROJECT_DIR$/Estruturas Condicionais/Estruturas Condicionais.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EstruturasDeRepeticao/EstruturasDeRepeticao.iml" filepath="$PROJECT_DIR$/EstruturasDeRepeticao/EstruturasDeRepeticao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tipo-Varaveis/Tipo-Varaveis.iml" filepath="$PROJECT_DIR$/Tipo-Varaveis/Tipo-Varaveis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TratamentoDeExcecoes/TratamentoDeExcecoes.iml" filepath="$PROJECT_DIR$/TratamentoDeExcecoes/TratamentoDeExcecoes.iml" />
+    </modules>
+  </component>
+</project>
