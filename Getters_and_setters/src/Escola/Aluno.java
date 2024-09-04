@@ -10,7 +10,7 @@ public class Aluno {
     public String getNome(){
         return nome;    
     }
-
+    
     public void setIdade(int idade){
         this.idade = idade;
     }
