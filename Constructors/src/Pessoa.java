@@ -8,8 +8,11 @@ public class Pessoa {
         setNome(nome);
         setCpf(cpf);
     }
+    //Construtor Padrão, sem parametros, é "Obrigatório".
+    public Pessoa(){
+        super();
+    }
     /*Tomar cuidado com os construtores, nem todos os Atriibutos são obrigatórios de serem incluidos inicialmente.
-     * 
      */
     /**
      * @return String return the nome
