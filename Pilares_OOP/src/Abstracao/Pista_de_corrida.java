@@ -13,5 +13,12 @@ public class Pista_de_corrida {
         Veiculo lamborghini = new Carro();
         lamborghini.setChassi("7890-abcd");
         lamborghini.ligar();
-    }
+
+        /*O polimorfismo já está exemplificado aqui dentro, pois
+        *Como podemos ver na classe, o mesmo métodos está sendo utilizando
+        *em diferentes objetos.
+        *E quando é utilizado, tem lógicas diferentes.
+        *
+        */
+        }
 }
