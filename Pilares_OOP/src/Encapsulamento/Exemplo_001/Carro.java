@@ -1,4 +1,4 @@
-package Encapsulamento;
+package Encapsulamento.Exemplo_001;
 
 public class Carro {
     

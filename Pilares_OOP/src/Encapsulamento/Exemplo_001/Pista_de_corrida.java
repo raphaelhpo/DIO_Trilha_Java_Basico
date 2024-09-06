@@ -1,4 +1,4 @@
-package Encapsulamento;
+package Encapsulamento.Exemplo_001;
 
 public class Pista_de_corrida {
     public static void main(String[] args) {
