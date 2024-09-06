@@ -1,4 +1,4 @@
-package Heranca;
+package Heranca.Exemplos_001;
 
 public class Veiculo {
     private String chassi;
