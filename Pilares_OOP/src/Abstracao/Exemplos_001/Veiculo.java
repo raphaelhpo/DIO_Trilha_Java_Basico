@@ -1,4 +1,4 @@
-package Abstracao;
+package Abstracao.Exemplos_001;
 
 public abstract class Veiculo {
     private String chassi;

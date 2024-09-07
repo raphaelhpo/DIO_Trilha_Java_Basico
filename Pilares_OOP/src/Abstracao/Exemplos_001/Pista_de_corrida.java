@@ -1,4 +1,4 @@
-package Abstracao;
+package Abstracao.Exemplos_001;
 
 public class Pista_de_corrida {
     public static void main(String[] args) {
