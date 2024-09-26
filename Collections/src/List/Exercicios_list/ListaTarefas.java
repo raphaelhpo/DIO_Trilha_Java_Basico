@@ -9,10 +9,6 @@ public class ListaTarefas {
     public ListaTarefas(){
         this.tarefas = new ArrayList<>();
     }
-
-    /**@param tarefa descrição da tarefa
-     * @return null Adiciona um valor à lista.
-     **/
     public void adicionarTarefa(String descricao){
         tarefas.add(new Tarefa(descricao));
     }
@@ -35,6 +31,23 @@ public class ListaTarefas {
 
     public void obterDescricaoesTarefas(){
         //Retorna uma lista contendo a descrição de todas as tarefas na lista.
-        System.out.println(tarefas);
+        for(int i = 0;i<tarefas.size();i++){
+            System.out.println(tarefas.get(i));
+        }
+    }
+    public static void main(String[] args) {
+
+        ListaTarefas listaTarefas = new ListaTarefas();
+        System.out.println(listaTarefas.obterNumeroTotalTarefas());
+
+        listaTarefas.adicionarTarefa("Tarefa 1");
+        listaTarefas.adicionarTarefa("Tarefa 2");
+        System.out.println(listaTarefas.obterNumeroTotalTarefas());
+
+        listaTarefas.obterDescricaoesTarefas();
+
+        listaTarefas.removerTarefa("Tarefa 2");
+        System.out.println(listaTarefas.obterNumeroTotalTarefas());
+
     }
 }
