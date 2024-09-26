@@ -1,4 +1,4 @@
-package List.Exercicios_list;
+package List.Exercicios_list.Tarefas;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +12,6 @@ public class ListaTarefas {
     public void adicionarTarefa(String descricao){
         tarefas.add(new Tarefa(descricao));
     }
-
     public void removerTarefa(String descricao){
         //Remove uma tarefa da lista com base em sua descrição.
         List<Tarefa> tarefasParaRemover = new ArrayList<>();
@@ -24,11 +23,9 @@ public class ListaTarefas {
         }
         tarefas.removeAll(tarefasParaRemover);
     }
-
     public int obterNumeroTotalTarefas(){
         return tarefas.size();
     }
-
     public void obterDescricaoesTarefas(){
         //Retorna uma lista contendo a descrição de todas as tarefas na lista.
         for(int i = 0;i<tarefas.size();i++){

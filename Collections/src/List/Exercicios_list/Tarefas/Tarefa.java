@@ -1,4 +1,4 @@
-package List.Exercicios_list;
+package List.Exercicios_list.Tarefas;
 
 public class Tarefa {
     private String descricao;
@@ -15,7 +15,4 @@ public class Tarefa {
     public String toString() {
         return "Tarefa [descricao=" + descricao + "]";
     }
-
-    
-
 }
