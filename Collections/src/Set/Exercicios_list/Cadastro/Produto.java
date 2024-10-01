@@ -1,6 +1,6 @@
 package Set.Exercicios_list.Cadastro;
 
-public class Produto {
+public class Produto implements Comparable<Produto> {
 
     private String nome;
     private double preco;
@@ -60,6 +60,10 @@ public class Produto {
         " ,Codigo:" + getCodigo();
     }
 
-    
-    
+
+    @Override
+    public int compareTo(Produto o) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'compareTo'");
+    }
 }

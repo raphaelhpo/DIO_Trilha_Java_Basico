@@ -15,11 +15,9 @@ public class CadastroProdutos {
     }
 
     public void exibirProdutosPorNome(){
-        
     }
 
     public void exibirProdutosPorPreco(){
-
     }
 
 }
