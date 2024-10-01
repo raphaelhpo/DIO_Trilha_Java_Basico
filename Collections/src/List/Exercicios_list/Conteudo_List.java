@@ -1,4 +1,4 @@
-package List;
+package List.Exercicios_list;
 
 public class Conteudo_List {
     /*A interface List é uma coleção ordenada que permite a 
