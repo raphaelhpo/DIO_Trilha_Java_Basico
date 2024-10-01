@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "AgendaContatos",
+            "request": "launch",
+            "mainClass": "Set.Exercicios_list.Contatos.AgendaContatos",
+            "projectName": "Collections_3b7d0db7"
+        },
+        {
+            "type": "java",
+            "name": "ConjuntoConvidados",
+            "request": "launch",
+            "mainClass": "Set.Exercicios_list.Convidados.ConjuntoConvidados",
+            "projectName": "Collections_3b7d0db7"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"

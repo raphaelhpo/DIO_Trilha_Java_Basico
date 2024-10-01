@@ -40,7 +40,7 @@ public class ConjuntoConvidados {
     public static void main(String[] args) {
         ConjuntoConvidados conjuntoConvidados = new ConjuntoConvidados();
         conjuntoConvidados.adicionarConvidado("Alice", 1);
-        conjuntoConvidados.adicionarConvidado("Bob", 2);
+        conjuntoConvidados.adicionarConvidado("Bob", 4);
         conjuntoConvidados.adicionarConvidado("Charlie", 3);
         conjuntoConvidados.adicionarConvidado("David", 4);
         conjuntoConvidados.adicionarConvidado("Eve", 5);
