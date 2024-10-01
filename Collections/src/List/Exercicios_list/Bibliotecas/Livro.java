@@ -3,9 +3,9 @@ package List.Exercicios_list.Bibliotecas;
 public class Livro {
     private String titulo;
     private String autor;
-    private String ano;
+    private int ano;
 
-    public Livro(String titulo, String autor, String ano) {
+    public Livro(String titulo, String autor, int ano) {
         this.titulo = titulo;
         this.autor = autor;
         this.ano = ano;
@@ -19,7 +19,7 @@ public class Livro {
         return autor;
     }
 
-    public String getAno() {
+    public int getAno() {
         return ano;
     }
 

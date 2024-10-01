@@ -1,6 +1,7 @@
 package List.Exercicios_list.Ordenacao;
+import java.util.Comparator;
 
-public class ComparatorPorAltura {
+public class ComparatorPorAltura implements Comparator<Pessoa>{
 
     @Override
     public int compare(Pessoa p1, Pessoa p2) {
