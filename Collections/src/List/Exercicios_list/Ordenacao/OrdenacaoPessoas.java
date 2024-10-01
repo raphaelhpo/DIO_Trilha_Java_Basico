@@ -1,7 +1,6 @@
 package List.Exercicios_list.Ordenacao;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 
@@ -19,7 +18,6 @@ public class OrdenacaoPessoas {
       
           // Exibindo a lista de pessoas adicionadas
           System.out.println(ordenacaoPessoas.pessoas);
-      
           // Ordenando e exibindo por idade
           System.out.println(ordenacaoPessoas.ordenarPorIdade());
       

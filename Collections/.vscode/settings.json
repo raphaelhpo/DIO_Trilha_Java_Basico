@@ -4,5 +4,8 @@
     "java.project.referencedLibraries": [
         "lib/**/*.jar"
     ],
-    "java.checkstyle.configuration": "/google_checks.xml"
+    "java.checkstyle.configuration": "/sun_checks.xml",
+    "cSpell.words": [
+        "Conteúdo"
+    ]
 }
