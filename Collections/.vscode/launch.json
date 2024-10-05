@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "AgendaDeContatos",
+            "request": "launch",
+            "mainClass": "Map.Exercicios_map.AgendaDeContatos.AgendaDeContatos",
+            "projectName": "Collections_893e872a"
+        },
+        {
+            "type": "java",
             "name": "AgendaContatos",
             "request": "launch",
             "mainClass": "Set.Exercicios_list.Contatos.AgendaContatos",
