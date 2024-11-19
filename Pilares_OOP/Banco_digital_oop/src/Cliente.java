@@ -1,4 +1,8 @@
 public class Cliente {
 
-    public String nome;
+    private String nome;
+
+    public Cliente(){
+        this.nome = nome;
+    }
 }

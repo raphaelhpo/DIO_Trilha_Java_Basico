@@ -1,4 +1,12 @@
 public class Banco {
 
-    public String nome;
+    private String nome;
+
+    public Banco(){
+        this.nome = nome;
+    }
+
+    public String getNome() {
+        return nome;
+    }
 }
