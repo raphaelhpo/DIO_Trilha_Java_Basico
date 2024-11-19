@@ -5,11 +5,14 @@ public abstract class Conta {
     protected int agencia;
     protected int numero;
     protected double saldo;
+    protected Cliente cliente;
 
     private static final int AGENCIA_PADRAO = 1;
     private static int SEQUENCIAL = 1;
 
-    public Conta() {
+    public Conta(Cliente cliente) {
+        this.cliente = cliente;
+        
         agencia = AGENCIA_PADRAO;
         numero = SEQUENCIAL++;
         saldo = 0;
@@ -32,6 +35,6 @@ public abstract class Conta {
 
     protected void infosConta() {
         // TODO Auto-generated method stub
-        System.out.println(String.format("Agencia: %d\nConta: %d\nSaldo: %.2f", this.agencia, this.numero, this.saldo));
+        System.out.println(String.format("Nome Cliente: %s\nAgencia: %d\nConta: %d\nSaldo: %.2f", this.cliente.getNome(),this.agencia, this.numero, this.saldo));
     }
 }
