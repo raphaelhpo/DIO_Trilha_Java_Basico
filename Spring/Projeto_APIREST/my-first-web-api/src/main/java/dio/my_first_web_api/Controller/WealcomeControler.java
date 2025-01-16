@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class WealcomeControler{
-    @GetMapping
+    @GetMapping("/welcome")
     public String wealcome(){
         return "Welcome to my springBoot web API";
     }
