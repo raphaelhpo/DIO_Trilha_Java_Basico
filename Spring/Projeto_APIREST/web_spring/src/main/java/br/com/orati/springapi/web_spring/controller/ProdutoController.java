@@ -18,7 +18,6 @@ import br.com.orati.springapi.web_spring.model.repositories.ProdutoRepository;
 import jakarta.validation.Valid;
 
 
-
 @RestController
 @RequestMapping("/produtos")
 public class ProdutoController {
@@ -53,10 +52,4 @@ public class ProdutoController {
     public void excluirProduto(@PathVariable int id) {
         produtoRepository.deleteById(id);
     }
-
-    @GetMapping(path = "/oi")
-    public String getMethodName() {
-        return "Produtos";
-    }
-    
 }
