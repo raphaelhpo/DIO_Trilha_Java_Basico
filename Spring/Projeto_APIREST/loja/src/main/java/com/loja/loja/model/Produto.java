@@ -1,7 +1,6 @@
 package com.loja.loja.model;
 
 import java.math.BigDecimal;
-import java.security.Timestamp;
 import java.time.LocalDate;
 
 import jakarta.persistence.Entity;
