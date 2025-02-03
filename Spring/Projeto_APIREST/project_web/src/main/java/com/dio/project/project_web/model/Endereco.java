@@ -2,7 +2,11 @@ package com.dio.project.project_web.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 @Entity
 public class Endereco {
     @Id
