@@ -42,4 +42,6 @@ public class ClienteServiceImp implements ClienteService {
         throw new UnsupportedOperationException("Unimplemented method 'deletar'");
     }
 
+    
+
 }
