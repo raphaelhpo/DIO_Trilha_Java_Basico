@@ -1,0 +1,7 @@
+@RestController:
+@RequestMapping("Prefix"):
+@GetMapping:
+@PostMapping:
+@DeleteMapping:
+@RequestBody:
+@PathVariable:
