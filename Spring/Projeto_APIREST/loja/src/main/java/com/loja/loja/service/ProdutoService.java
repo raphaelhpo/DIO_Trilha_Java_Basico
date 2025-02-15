@@ -22,8 +22,10 @@ public class ProdutoService {
     public void atualizar(Produto produto) {
         //TODO: Atualizar dados de um produto.
         Optional<Produto> produtoLocal = repository.findById(produto.getId());
-        produto.setId(produtoLocal.get().getId());
-        repository.save(produto);
+        if(!produtoLocal.isPresent()){
+            produto.setId(produtoLocal.get().getId());
+            repository.save(produto);
+        }
     }
     public Iterable<Produto> listar() {
         //TODO: Listar TODOS os Produtos.
