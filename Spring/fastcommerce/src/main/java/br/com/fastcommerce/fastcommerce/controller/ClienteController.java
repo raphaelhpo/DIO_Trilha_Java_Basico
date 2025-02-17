@@ -24,12 +24,13 @@ public class ClienteController {
     ClienteService service;
 
     @PostMapping
-    public void salvar(@RequestBody Cliente cliente) {
-        service.salvarCliente(cliente);
+    public String salvarCliente(@RequestBody Cliente cliente) {
+        service.salvar(cliente);
+        return "Cliente salvo com sucesso";
     }
 
     @GetMapping
-    public List<Cliente> buscarTodosClientes(@RequestParam String param) {
+    public List<Cliente> buscarClientes(@RequestParam String param) {
         return service.buscarTodosClientes();
     }
     
@@ -38,17 +39,15 @@ public class ClienteController {
         return service.buscarClientePorId(id);
     }
 
-    @PutMapping
-    public String putMethodName(@PathVariable String id, @RequestBody String entity) {
-        //TODO: process PUT request
-        
-        return entity;
+    @PutMapping("/{id}")
+    public String atualizarCliente(@PathVariable Long id, @RequestBody Cliente cliente) {
+        service.atualizar(id, cliente);
+        return "Cliente atualizado com sucesso";
     }
     
-    @DeleteMapping
-    public String deleteMethodName(@PathVariable String id) {
-        //TODO: process DELETE request
-        
-        return id;
+    @DeleteMapping("/{id}")
+    public String deleteCliente(@PathVariable Long id) {
+        service.deletar(id);
+        return "Cliente deletado com sucesso";
     }
 }

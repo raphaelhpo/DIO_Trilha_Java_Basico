@@ -20,14 +20,8 @@ public class ClienteService {
     EnderecoRepository enderecoRepository;
     @Autowired
     ViaCepClient viaCepClient;
-    public void salvarCliente(Cliente cliente) {
-        String cep = cliente.getEndereco().getCep();
-        enderecoRepository.findById(cep).orElseGet(() -> {
-            Endereco novoEndereco = viaCepClient.getEndereco(cep);
-            enderecoRepository.save(novoEndereco);
-            return novoEndereco;
-        });
-        clienteRepository.save(cliente);
+    public void salvar(Cliente cliente) {
+        salvarClienteComEndereco(cliente);
     }
 
     public Optional<Cliente> buscarClientePorId(Long id) {
@@ -36,5 +30,35 @@ public class ClienteService {
 
     public List<Cliente> buscarTodosClientes() {
         return clienteRepository.findAll();
+    }
+
+    public void atualizar(Long id, Cliente cliente) {
+        Optional<Cliente> clienteBanco = clienteRepository.findById(id);
+        if (clienteBanco.isPresent()) {
+            salvarClienteComEndereco(cliente);
+        }else {
+            throw new RuntimeException("Cliente não encontrado");
+        }
+    }
+
+    public void deletar(Long id) {
+        Optional<Cliente> clienteBanco = clienteRepository.findById(id);
+        if (clienteBanco.isPresent()) {
+            clienteRepository.deleteById(id);
+        }else {
+            throw new RuntimeException("Cliente não encontrado");
+        }
+    }
+
+    private void salvarClienteComEndereco(Cliente cliente) {
+        String cep = cliente.getEndereco().getCep();
+		Endereco endereco = enderecoRepository.findById(cep).orElseGet(() -> {
+			// Caso não exista, integrar com o ViaCEP e persistir o retorno.
+			Endereco novoEndereco = viaCepClient.getEndereco(cep);
+			enderecoRepository.save(novoEndereco);
+			return novoEndereco;
+		});
+		cliente.setEndereco(endereco);
+		clienteRepository.save(cliente);
     }
 }
