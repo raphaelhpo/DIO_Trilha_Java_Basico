@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,19 +17,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.fastcommerce.fastcommerce.model.Cliente;
 import br.com.fastcommerce.fastcommerce.service.ClienteService;
+import feign.Response;
 
 @RestController
-@RequestMapping("/clientes")
+@RequestMapping("clientes")
 public class ClienteController {
     @Autowired
     ClienteService service;
-    @Autowired
-    Cliente cliente;
 
     @PostMapping
-    public String postMethodName(@RequestBody Cliente cliente) {
+    public void salvar(@RequestBody Cliente cliente) {
         service.salvarCliente(cliente);
-        return "Cliente: {" + cliente + "} salvo com sucesso";
     }
 
     @GetMapping
@@ -37,7 +36,7 @@ public class ClienteController {
     }
     
     @GetMapping("/{id}")
-    public Optional<Cliente> buscarCliente(@RequestParam Long id) {
+    public Optional<Cliente> buscarCliente(@PathVariable Long id) {
         return service.buscarClientePorId(id);
     }
 
