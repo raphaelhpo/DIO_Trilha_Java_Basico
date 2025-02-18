@@ -29,8 +29,8 @@ public class ClienteController {
         return "Cliente salvo com sucesso";
     }
 
-    @GetMapping
-    public List<Cliente> buscarClientes(@RequestParam String param) {
+    @GetMapping("/busca")
+    public List<Cliente> buscarClientes() {
         return service.buscarTodosClientes();
     }
     
