@@ -6,6 +6,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.com.fastcommerce.fastcommerce.exceptions.CepNotExistsException;
+import br.com.fastcommerce.fastcommerce.exceptions.ClienteExistsException;
+import br.com.fastcommerce.fastcommerce.exceptions.ClienteNotExistsException;
 import br.com.fastcommerce.fastcommerce.model.Cliente;
 import br.com.fastcommerce.fastcommerce.model.Endereco;
 import br.com.fastcommerce.fastcommerce.repository.ClienteRepository;
@@ -20,8 +23,13 @@ public class ClienteService {
     EnderecoRepository enderecoRepository;
     @Autowired
     ViaCepClient viaCepClient;
+
     public void salvar(Cliente cliente) {
-        salvarClienteComEndereco(cliente);
+        if(clienteRepository.findByEmail(cliente.getEmail()) == null) {
+            salvarClienteComEndereco(cliente);
+        }else{
+            throw new ClienteExistsException();
+        }
     }
 
     public Optional<Cliente> buscarClientePorId(Long id) {
@@ -36,8 +44,8 @@ public class ClienteService {
         Optional<Cliente> clienteBanco = clienteRepository.findById(id);
         if (clienteBanco.isPresent()) {
             salvarClienteComEndereco(cliente);
-        }else {
-            throw new RuntimeException("Cliente não encontrado");
+        } else {
+            throw new ClienteNotExistsException();
         }
     }
 
@@ -45,20 +53,24 @@ public class ClienteService {
         Optional<Cliente> clienteBanco = clienteRepository.findById(id);
         if (clienteBanco.isPresent()) {
             clienteRepository.deleteById(id);
-        }else {
-            throw new RuntimeException("Cliente não encontrado");
+        } else {
+            throw new ClienteNotExistsException();
         }
     }
 
     private void salvarClienteComEndereco(Cliente cliente) {
         String cep = cliente.getEndereco().getCep();
-		Endereco endereco = enderecoRepository.findById(cep).orElseGet(() -> {
-			// Caso não exista, integrar com o ViaCEP e persistir o retorno.
-			Endereco novoEndereco = viaCepClient.getEndereco(cep);
-			enderecoRepository.save(novoEndereco);
-			return novoEndereco;
-		});
-		cliente.setEndereco(endereco);
-		clienteRepository.save(cliente);
+        Endereco endereco = enderecoRepository.findById(cep).orElseGet(() -> {
+            // Caso não exista, integrar com o ViaCEP e persistir o retorno.
+            Endereco novoEndereco = viaCepClient.getEndereco(cep);
+            if (novoEndereco.getLogradouro() == null) {
+                throw new CepNotExistsException();
+            } else {
+                enderecoRepository.save(novoEndereco);
+            }
+            return novoEndereco;
+        });
+        cliente.setEndereco(endereco);
+        clienteRepository.save(cliente);
     }
 }

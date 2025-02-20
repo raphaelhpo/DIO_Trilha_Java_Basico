@@ -5,7 +5,10 @@ import org.springframework.stereotype.Repository;
 
 import br.com.fastcommerce.fastcommerce.model.Cliente;
 
+
 @Repository
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {
+    
+    public Boolean findByEmail(String email);
     
 }

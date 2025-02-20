@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,9 +24,9 @@ public class ClienteController {
     ClienteService service;
 
     @PostMapping
-    public String salvarCliente(@RequestBody Cliente cliente) {
+    public ResponseEntity<String>  salvarCliente(@RequestBody Cliente cliente) {
         service.salvar(cliente);
-        return "Cliente salvo com sucesso";
+        return ResponseEntity.ok("Cliente salvo com sucesso");
     }
 
     @GetMapping("/busca")
@@ -39,14 +40,14 @@ public class ClienteController {
     }
 
     @PutMapping("/{id}")
-    public String atualizarCliente(@PathVariable Long id, @RequestBody Cliente cliente) {
+    public ResponseEntity<String> atualizarCliente(@PathVariable Long id, @RequestBody Cliente cliente) {
         service.atualizar(id, cliente);
-        return "Cliente atualizado com sucesso";
+        return ResponseEntity.ok("Cliente atualizado com sucesso.");
     }
     
     @DeleteMapping("/{id}")
-    public String deleteCliente(@PathVariable Long id) {
+    public ResponseEntity<String> deleteCliente(@PathVariable Long id) {
         service.deletar(id);
-        return "Cliente deletado com sucesso";
+        return ResponseEntity.ok("Cliente deletado com sucesso");
     }
 }
