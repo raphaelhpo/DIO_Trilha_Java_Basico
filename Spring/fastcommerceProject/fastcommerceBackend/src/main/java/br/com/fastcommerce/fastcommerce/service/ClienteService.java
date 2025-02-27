@@ -25,11 +25,12 @@ public class ClienteService {
     ViaCepClient viaCepClient;
 
     public void salvar(Cliente cliente) {
-        if(clienteRepository.findByEmail(cliente.getEmail()) == null) {
-            salvarClienteComEndereco(cliente);
-        }else{
-            throw new ClienteExistsException();
-        }
+        // if(clienteRepository.findByEmail(cliente.getEmail()) == null) {
+            
+        // }else{
+        //     throw new ClienteExistsException();
+        // }
+        salvarClienteComEndereco(cliente);
     }
 
     public Optional<Cliente> buscarClientePorId(Long id) {
