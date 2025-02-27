@@ -1,9 +1,10 @@
 package br.com.fastcommerce.fastcommerce.controller;
 
-import java.util.List;
 import java.util.Optional;
 
+import org.hibernate.query.Page;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,14 +30,14 @@ public class ClienteController {
         return ResponseEntity.ok("Cliente salvo com sucesso");
     }
 
-    @GetMapping("/busca")
-    public List<Cliente> buscarClientes() {
-        return service.buscarTodosClientes();
+    @GetMapping("/busca/{page}")
+    public ResponseEntity<Page<Cliente>>  buscarClientes(@PathVariable Pageable page) {
+        return ResponseEntity.ok(service.buscarTodosClientes(page));
     }
     
     @GetMapping("/{id}")
-    public Optional<Cliente> buscarCliente(@PathVariable Long id) {
-        return service.buscarClientePorId(id);
+    public ResponseEntity<Optional<Cliente>> buscarCliente(@PathVariable Long id) {
+        return ResponseEntity.ok(service.buscarClientePorId(id));
     }
 
     @PutMapping("/{id}")

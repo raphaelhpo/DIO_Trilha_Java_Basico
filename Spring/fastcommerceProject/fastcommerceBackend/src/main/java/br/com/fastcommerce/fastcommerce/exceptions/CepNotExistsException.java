@@ -1,6 +1,6 @@
 package br.com.fastcommerce.fastcommerce.exceptions;
 
-public class CepNotExistsException extends RuntimeException {
+public class CepNotExistsException extends RuntimeException{
     public CepNotExistsException() {
         super("CEP não encontrado.");
     }
