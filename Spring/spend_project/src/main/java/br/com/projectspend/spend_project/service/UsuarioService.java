@@ -6,6 +6,7 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
+import br.com.projectspend.spend_project.dto.UsuarioDTO;
 import br.com.projectspend.spend_project.model.Usuario;
 
 @Service
@@ -14,6 +15,6 @@ public interface UsuarioService {
 
     public List<Usuario> getAll();
 
-    public Optional<Usuario> getForId(Long id);
+    public UsuarioDTO getForId(Long id);
 
 }

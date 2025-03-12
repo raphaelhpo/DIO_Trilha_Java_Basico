@@ -3,8 +3,6 @@ package br.com.projectspend.spend_project.model.gastos;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-
 import br.com.projectspend.spend_project.model.Usuario;
 import br.com.projectspend.spend_project.model.gastos.enums.StatusGasto;
 import br.com.projectspend.spend_project.model.gastos.enums.TipoDeGasto;
@@ -34,4 +32,8 @@ public abstract class Gastos {
     private BigDecimal valor;
     private LocalDate data;
     private StatusGasto status = StatusGasto.NAO_PAGO;
+
+    @ManyToOne
+    @JoinColumn(name = "usuario_id", nullable = false)
+    Usuario usuario;
 }

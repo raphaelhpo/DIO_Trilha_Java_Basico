@@ -11,6 +11,7 @@ import br.com.projectspend.spend_project.model.gastos.enums.TipoDeGasto;
 import br.com.projectspend.spend_project.repository.GastosVariaveisRepository;
 import br.com.projectspend.spend_project.repository.UsuarioRepository;
 import br.com.projectspend.spend_project.service.GastosVariaveisService;
+import jakarta.persistence.EntityNotFoundException;
 
 @Service
 public class GastosVariaveisServiceImp implements GastosVariaveisService {
@@ -24,19 +25,13 @@ public class GastosVariaveisServiceImp implements GastosVariaveisService {
     public void save(GastosVariaveis gastosVariaveis) {
         gastosVariaveis.setTipoGasto(TipoDeGasto.VARIAVEL);
 
-        Long usuarioId = gastosVariaveis.getUsuario().getId();
-
-        Usuario usuario = usuarioRepository.findById(usuarioId)
-        .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
+        Usuario usuario = usuarioRepository.findById(gastosVariaveis.getUsuario().getId())
+        .orElseThrow(() -> new EntityNotFoundException("Usuário não encontrado"));
 
         gastosVariaveis.setUsuario(usuario);
 
-        usuario.getGastosVariaveis().add(gastosVariaveis);
-
         repository.save(gastosVariaveis);
-        usuarioRepository.save(usuario);
     }
-
     @Override
     public List<GastosVariaveis> getAll() {
         return repository.findAll();

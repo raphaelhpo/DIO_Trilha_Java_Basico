@@ -5,12 +5,9 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import br.com.projectspend.spend_project.model.gastos.GastosAleatorios;
 import br.com.projectspend.spend_project.model.gastos.GastosFixos;
 import br.com.projectspend.spend_project.model.gastos.GastosVariaveis;
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -25,22 +22,17 @@ import lombok.Setter;
 @Entity
 public class Usuario {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     
     private String name;
     private BigDecimal renda;
     private LocalDate dataVigente;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JsonManagedReference
-    private List<GastosFixos> gastosFixos = new ArrayList<>();
-
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JsonManagedReference
-    private List<GastosVariaveis> gastosVariaveis = new ArrayList<>();
-    
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JsonManagedReference
-    private List<GastosAleatorios> gastosAleatorios = new ArrayList<>();
+    @OneToMany(mappedBy = "usuario", fetch = FetchType.EAGER)
+    List<GastosFixos> gastosFixos = new ArrayList<>();
+    @OneToMany(mappedBy = "usuario", fetch = FetchType.EAGER)
+    List<GastosVariaveis> gastosVariaveis = new ArrayList<>();
+    @OneToMany(mappedBy = "usuario", fetch = FetchType.EAGER)
+    List<GastosAleatorios> gastosAleatorios = new ArrayList<>();
 }

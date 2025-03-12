@@ -8,7 +8,7 @@ import br.com.projectspend.spend_project.model.gastos.GastosAleatorios;
 
 @Service
 public interface GastosAleatoriosService {
-    public void save(Long id, GastosAleatorios gastosAleatorios);
+    public void save(GastosAleatorios gastosAleatorios);
 
     public List<GastosAleatorios> getAll();
 }
