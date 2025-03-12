@@ -1,0 +1,12 @@
+spring:
+    datasource:
+        url: jdbc:postgresql://localhost:5432/postgrespend
+        username: postgres
+        password: 69443398
+        driver-class-name: org.postgresql.Driver
+    jpa:
+        hibernate:
+            ddl-auto: update  # Pode ser 'create', 'update', 'validate', ou 'none'
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.PostgreSQLDialect

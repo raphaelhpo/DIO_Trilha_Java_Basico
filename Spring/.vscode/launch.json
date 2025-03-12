@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "SpendProjectApplication",
+            "request": "launch",
+            "mainClass": "br.com.projectspend.spend_project.SpendProjectApplication",
+            "projectName": ""
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
