@@ -1,28 +1,26 @@
 package br.com.projectspend.spend_project.controller;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
+import br.com.projectspend.spend_project.dto.UsuarioDTO;
 import br.com.projectspend.spend_project.dto.UsuarioDto;
 import br.com.projectspend.spend_project.model.Usuario;
 import br.com.projectspend.spend_project.service.UsuarioService;
-import org.springframework.web.bind.annotation.PutMapping;
-
+>>>>>>> ccbb4a492d0de6044889a02638d2d8e2b450e469:Spring/spend_project/src/main/java/br/com/projectspend/spend_project/controller/UsuarioController.java
 
 
 
 
 @RestController
-@RequestMapping("usuario")
+@RequestMapping("/usuario")
 public class UsuarioController {
 
     @Autowired
@@ -34,11 +32,12 @@ public class UsuarioController {
     }
 
     @GetMapping("{id}")
-    public Optional<Usuario> getUsuarioForId(@PathVariable Long id) {
+    public UsuarioDTO getUsuarioForId(@PathVariable Long id) {
         return service.getForId(id);
     }
 
     @GetMapping
+<<<<<<< HEAD:Spring/spend_project_/spend_project_backend/src/main/java/br/com/projectspend/spend_project/controller/UsuarioController.java
     public List<Usuario> getUsuarioForId() {
         return service.getAll();
     }
@@ -53,4 +52,10 @@ public class UsuarioController {
         service.delete(id);
     }
 
+=======
+    public List<Usuario> getUsuarios() {
+        return service.getAll();
+    }
+    
+>>>>>>> ccbb4a492d0de6044889a02638d2d8e2b450e469:Spring/spend_project/src/main/java/br/com/projectspend/spend_project/controller/UsuarioController.java
 }

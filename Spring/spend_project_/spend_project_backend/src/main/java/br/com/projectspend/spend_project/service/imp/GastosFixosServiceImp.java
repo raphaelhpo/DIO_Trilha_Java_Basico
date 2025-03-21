@@ -6,7 +6,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.projectspend.spend_project.controller.GastosFixosController;
 import br.com.projectspend.spend_project.dto.GastosFixosDto;
 import br.com.projectspend.spend_project.model.Usuario;
 import br.com.projectspend.spend_project.model.gastos.GastosFixos;
